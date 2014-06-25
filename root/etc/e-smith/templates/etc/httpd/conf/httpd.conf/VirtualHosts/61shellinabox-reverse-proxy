@@ -27,7 +27,7 @@
 
 			$OUT .= "#########\n";
 			$OUT .= "\<Location \/$shellinaboxd{'Name'}\>\n";
-            $OUT .= "    ProxyPass http://localhost:1870/n";
+            $OUT .= "    ProxyPass http://localhost:1870/"."\n";
 			$OUT .= "    order deny,allow\n";
 			$OUT .= "    deny from all\n";
 			$OUT .= "    SSLRequireSSL\n";
