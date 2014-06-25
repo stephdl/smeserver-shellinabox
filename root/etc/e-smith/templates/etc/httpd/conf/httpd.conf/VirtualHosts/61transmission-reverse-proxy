@@ -1,0 +1,62 @@
+{ my $status = $shellinaboxd{'status'} || "disabled";
+    return "    # shellinabox is disabled in this VirtualHost"
+           unless $status eq 'enabled';
+
+	{
+	$OUT .= "###########################################################\n";
+	$OUT .= "#######       shellinabox reverse proxy         ##########\n";
+	$OUT .= "###########################################################\n";
+		{
+
+		if ($port ne "443")
+			{
+			$OUT .= "# Redirect shellinabox Address to Secure Address\n";
+			$OUT .= "    RewriteEngine On\n";
+			$OUT .= "    RewriteCond %{HTTPS} off\n";
+			$OUT .= "    RewriteRule \/$shellinaboxd{'Name'} https:\/\/%{HTTP_HOST}:443\/$shellinaboxd{'Name'}\n";
+			$OUT .= "## End Of Redirect\n";
+			}
+
+
+                      #  $OUT .= "    ##########\n";
+                      #  $OUT .= "        AddExternalGroup unixgroup /usr/bin/unixgroup\n";
+                      #  $OUT .= "        SetExternalGroupMethod unixgroup environment\n";
+                      #  $OUT .= "    \n";
+                      #  $OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
+                      #  $OUT .= "        SetExternalAuthMethod pwauth pipe\n";
+                      #  $OUT .= "    #########\n";
+
+            
+			$OUT .= "    ProxyPass \/$shellinaboxd{'Name'} http:\/\/127.0.0.1:1870\/$shellinaboxd{'Name'}\n";
+			$OUT .= "    ProxyPassReverse \/$shellinaboxd{'Name'} http:\/\/127.0.0.1:1870\/$shellinaboxd{'Name'}\n";
+			$OUT .= "#########\n";
+			$OUT .= "\<Location \/$shellinaboxd{'Name'}\>\n";
+			$OUT .= "    order deny,allow\n";
+			$OUT .= "    deny from all\n";
+			$OUT .= "    SSLRequireSSL\n";
+
+		if ($shellinaboxd{'PublicAccess'} eq 'local')
+			{       
+		      	$OUT .= "    allow from $localAccess\n";
+			} 
+
+		if ($shellinaboxd{'PublicAccess'} eq 'global')
+			{
+		      	$OUT .= "    allow from all\n";
+			}
+
+		if (($shellinaboxd{'PublicAccess'} ne 'global') && ($shellinaboxd{'PublicAccess'} ne 'local'))
+			{
+		      	$OUT .= "    allow from none\n";
+			}
+
+			$OUT .= "    AuthName \"$shellinaboxd{'Name'}\"\n";   
+            $OUT .= "    AuthBasicProvider external\n";
+			$OUT .= "    AuthType Basic\n";
+			$OUT .= "    AuthExternal pwauth\n";
+			#$OUT .= "    require user admin \n";
+			$OUT .= "\<\/Location\>\n";
+			$OUT .= "#########\n";
+		}
+	}
+}
