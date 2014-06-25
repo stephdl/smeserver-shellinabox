@@ -4,7 +4,7 @@ use esmith::Build::CreateLinks qw(:all);
 
 ####################
 # links to add
-
+panel_link("shellinabox", "manager");
 # templates to expand
     templates2events("/etc/sysconfig/shellinaboxd", qw( conf-shellinaboxd  bootstrap-console-save console-save ));
 
