@@ -18,19 +18,16 @@
 			}
 
 
-                      #  $OUT .= "    ##########\n";
-                      #  $OUT .= "        AddExternalGroup unixgroup /usr/bin/unixgroup\n";
-                      #  $OUT .= "        SetExternalGroupMethod unixgroup environment\n";
-                      #  $OUT .= "    \n";
-                      #  $OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
-                      #  $OUT .= "        SetExternalAuthMethod pwauth pipe\n";
-                      #  $OUT .= "    #########\n";
+                        $OUT .= "    ##########\n";
+                        $OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
+                        $OUT .= "        SetExternalAuthMethod pwauth pipe\n";
+                        $OUT .= "    #########\n";
 
             
-			$OUT .= "    ProxyPass \/$shellinaboxd{'Name'} http:\/\/127.0.0.1:1870\/$shellinaboxd{'Name'}\n";
-			$OUT .= "    ProxyPassReverse \/$shellinaboxd{'Name'} http:\/\/127.0.0.1:1870\/$shellinaboxd{'Name'}\n";
+
 			$OUT .= "#########\n";
 			$OUT .= "\<Location \/$shellinaboxd{'Name'}\>\n";
+            $OUT .= "    ProxyPass http://localhost:1870/n";
 			$OUT .= "    order deny,allow\n";
 			$OUT .= "    deny from all\n";
 			$OUT .= "    SSLRequireSSL\n";

@@ -5,7 +5,7 @@
 USER=shellinabox
 GROUP=shellinabox
 CERTDIR=/var/lib/shellinabox
-PORT=4200
+PORT=1870
 #OPTS="--disable-ssl-menu -s /:LOGIN"
 #for root login
 OPTS="--no-beep --service=/:SSH"
