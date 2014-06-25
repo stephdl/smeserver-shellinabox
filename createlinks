@@ -12,6 +12,7 @@ use esmith::Build::CreateLinks qw(:all);
 # services to launch on event
     safe_symlink("restart", "root/etc/e-smith/events/conf-shellinaboxd/services2adjust/shellinaboxd");
     safe_symlink("restart", "root/etc/e-smith/events/conf-shellinaboxd/services2adjust/httpd-e-smith");
+    safe_symlink("restart", "root/etc/e-smith/events/console-save/services2adjust/shellinaboxd");
 
 
 # links for rc.d from init.d
