@@ -8,7 +8,7 @@ Release: %{release}%{?dist}
 Distribution: SME Server
 License: GNU GPL version 2
 Group: SMEserver/addon
-Source: smeserver-transmission-%{version}.tar.gz
+Source: smeserver-shellinabox-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}-buildroot
 BuildRequires: e-smith-devtools
