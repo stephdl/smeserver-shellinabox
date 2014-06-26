@@ -48,7 +48,7 @@
 			}
 
 			$OUT .= "    AuthName \"$shellinaboxd{'Name'}\"\n";   
-            $OUT .= "    AuthBasicProvider external\n";
+            #$OUT .= "    AuthBasicProvider external\n";
 			$OUT .= "    AuthType Basic\n";
             $OUT .= "    TKTAuthLoginURL /server-common/cgi-bin/login\n";
             $OUT .= "        require admin\n";
