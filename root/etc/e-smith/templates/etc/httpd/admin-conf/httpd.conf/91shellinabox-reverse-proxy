@@ -18,10 +18,10 @@
 			}
 
 
-                        $OUT .= "    ##########\n";
-                        $OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
-                        $OUT .= "        SetExternalAuthMethod pwauth pipe\n";
-                        $OUT .= "    #########\n";
+                        #$OUT .= "    ##########\n";
+                        #$OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
+                        #$OUT .= "        SetExternalAuthMethod pwauth pipe\n";
+                        #$OUT .= "    #########\n";
 
             
 
