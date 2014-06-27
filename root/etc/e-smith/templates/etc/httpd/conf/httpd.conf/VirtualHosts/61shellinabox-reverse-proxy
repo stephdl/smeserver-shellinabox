@@ -50,13 +50,7 @@
 			$OUT .= "    AuthName \"$shellinaboxd{'Name'}\"\n";   
             $OUT .= "    AuthBasicProvider external\n";
 			$OUT .= "    AuthType Basic\n";
-            $OUT .= "    TKTAuthLoginURL /server-common/cgi-bin/login\n";
-            $OUT .= "        require admin\n";
-            $OUT .= "        SetEnv IMGHDR_SRC \"/e-smith-common/server-manager.jpg\"\n";
-            $OUT .= "        Satisfy all\n";
-
-
-			#$OUT .= "    AuthExternal pwauth\n";
+			$OUT .= "    AuthExternal pwauth\n";
 			#$OUT .= "    require user admin \n";
 			$OUT .= "\<\/Location\>\n";
 			$OUT .= "#########\n";
