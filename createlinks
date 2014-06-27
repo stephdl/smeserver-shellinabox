@@ -17,6 +17,6 @@ panel_link("shellinabox", "manager");
 
 # links for rc.d from init.d
 	service_link_enhanced("shellinaboxd", "S99", "7");
-	service_link_enhanced("shellinaboxd", "K45", "6");
-	service_link_enhanced("shellinaboxd", "K45", "0");
-	service_link_enhanced("shellinaboxd", "K45", "1");
+	#service_link_enhanced("shellinaboxd", "K45", "6");
+	#service_link_enhanced("shellinaboxd", "K45", "0");
+	#service_link_enhanced("shellinaboxd", "K45", "1");
