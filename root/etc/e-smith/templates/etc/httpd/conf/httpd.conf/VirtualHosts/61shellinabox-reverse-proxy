@@ -58,7 +58,7 @@
 			$OUT .= "    AuthType Basic\n";
 			$OUT .= "    AuthExternal pwauth\n";
 
-		if ($shellinaboxd{'PublicAccess'} ne 'local')
+		if (($shellinaboxd{'PublicAccess'} ne 'local') || ($shellinaboxd{'WebAuth'} eq 'enabled'))
                         {
                         my @users = split(",", ($shellinaboxd{ShellUsers} || "") );
                         $OUT .= "    require user admin @users\n";
