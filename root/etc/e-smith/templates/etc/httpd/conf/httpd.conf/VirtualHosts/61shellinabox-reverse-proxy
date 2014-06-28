@@ -18,12 +18,25 @@
 			}
 
 
-                        $OUT .= "    ##########\n";
-                        $OUT .= "        AddExternalAuth pwauth /usr/bin/pwauth\n";
-                        $OUT .= "        SetExternalAuthMethod pwauth pipe\n";
-                        $OUT .= "    #########\n";
+                   use Config;
+                   my $arch = $Config{selectminbits};
 
-            
+                  if ($arch eq "32"){
+                  $OUT .= qq(
+##########
+    AddExternalAuth pwauth /usr/lib/httpd/modules/pwauth
+    SetExternalAuthMethod pwauth pipe
+##########
+);}
+
+elsif ($arch eq "64"){
+    $OUT .= qq(
+##########
+    AddExternalAuth pwauth /usr/lib64/httpd/modules/pwauth
+    SetExternalAuthMethod pwauth pipe
+##########
+);}	
+          
 
 			$OUT .= "#########\n";
 			$OUT .= "\<Location \/$shellinaboxd{'Name'}\>\n";
