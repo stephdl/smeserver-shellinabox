@@ -5,7 +5,9 @@
 USER=shellinabox
 GROUP=shellinabox
 CERTDIR=/var/lib/shellinabox
-PORT=1870
+{
+PORT=$shellinaboxd{'TcpPort'}
+}
 #OPTS="--disable-ssl-menu -s /:LOGIN"
 #for root login
 OPTS="--no-beep --service=/:SSH"
