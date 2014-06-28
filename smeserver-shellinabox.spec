@@ -1,5 +1,5 @@
 %define name smeserver-shellinabox
-%define version 0.0.5
+%define version 0.0.6
 %define release 1
 Summary: shellinabox is an ajax webbase terminal
 Name: %{name}
