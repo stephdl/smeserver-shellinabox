@@ -1,7 +1,7 @@
 <lexicon lang="en-us">
 <entry>
 <base>ShellInaBox</base>
-<trans>web based terminal emulator</trans>
+<trans>ssh via a web browser</trans>
 </entry> 
 </lexicon>
 
