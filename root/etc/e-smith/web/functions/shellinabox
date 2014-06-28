@@ -19,7 +19,7 @@ BEGIN
 
 
 my $q = new CGI;
-my $content="0; url=https://".$ENV {'HTTP_X_FORWARDED_HOST'}."/shell";
+my $content="0; url=https://".$ENV {'HTTP_X_FORWARDED_HOST'}.${'shellinaboxd'}{'Name'};
 $q->default_dtd('-//W3C//DTD XHTML 1.0 Transitional//EN');
 
 print $q->header ('text/html');
