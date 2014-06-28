@@ -8,7 +8,7 @@
 use strict;
 use CGI':all';
 use CGI::Carp qw(fatalsToBrowser);
-use esmith::DB;
+use esmith::ConfigDB;
 
 BEGIN
 {
