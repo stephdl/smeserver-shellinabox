@@ -17,7 +17,7 @@ BEGIN
     delete $ENV {'ENV'};
 }
 
-my $DB = esmith::ConfigDB->open(); ||
+my $DB = esmith::ConfigDB->open() ||
            die esmith::ConfigDB->error;
 my $url_Name = $DB->get_prop( 'shellinaboxd', 'Name' ) || '';
 
