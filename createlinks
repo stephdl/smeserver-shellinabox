@@ -14,7 +14,7 @@ panel_link("shellinabox", "manager");
 
 # actions to do
 
-    for  my $event (qw( conf-shellinaboxd console-save ))
+    for  my $event (qw( shellinaboxd console-save ))
 
     {
     event_link("shellinabox-action", "$event", "20");
