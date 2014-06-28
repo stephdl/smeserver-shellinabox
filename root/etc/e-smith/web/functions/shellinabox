@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 #----------------------------------------------------------------------
 # heading     : Administration
-# description : ShellInBox
+# description : ShellInaBox
 # navigation  : 4000 4200
 #----------------------------------------------------------------------
 
 use strict;
 use CGI':all';
 use CGI::Carp qw(fatalsToBrowser);
-
+use esmith::DB;
 
 BEGIN
 {
