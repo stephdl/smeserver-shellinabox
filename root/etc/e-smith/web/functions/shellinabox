@@ -17,9 +17,12 @@ BEGIN
     delete $ENV {'ENV'};
 }
 
+my $db = esmith::DB->open_ro() ||
+           die esmith::DB->error;
+my $url_Name = $db->get_prop( 'shellinaboxd', 'Name' ) || '';
 
 my $q = new CGI;
-my $content="0; url=https://".$ENV {'HTTP_X_FORWARDED_HOST'}.${'shellinaboxd'}{'Name'};
+my $content="0; url=https://".$ENV {'HTTP_X_FORWARDED_HOST'}.$urlName;
 $q->default_dtd('-//W3C//DTD XHTML 1.0 Transitional//EN');
 
 print $q->header ('text/html');
