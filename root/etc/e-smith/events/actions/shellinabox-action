@@ -1,0 +1,8 @@
+##bash
+#!/bin/bash
+
+expand-template /etc/sysconfig/shellinaboxd >/dev/null 2>&1
+expand-template /etc/httpd/conf/httpd.conf >/dev/null 2>&1
+service httpd-e-smith sigusr1 >/dev/null 2>&1
+service shellinaboxd restart >/dev/null 2>&1
+

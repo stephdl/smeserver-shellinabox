@@ -5,18 +5,20 @@ use esmith::Build::CreateLinks qw(:all);
 ####################
 # links to add
 panel_link("shellinabox", "manager");
+
 # templates to expand
-    templates2events("/etc/sysconfig/shellinaboxd", qw( conf-shellinaboxd  bootstrap-console-save console-save ));
+    templates2events("/etc/sysconfig/shellinaboxd", qw( bootstrap-console-save ));
 
 
 # services to launch on event
-    safe_symlink("reload", "root/etc/e-smith/events/conf-shellinaboxd/services2adjust/shellinaboxd");
-    safe_symlink("restart", "root/etc/e-smith/events/conf-shellinaboxd/services2adjust/httpd-e-smith");
-    safe_symlink("reload", "root/etc/e-smith/events/console-save/services2adjust/shellinaboxd");
 
+# actions to do
+
+    for  my $event (qw( conf-shellinaboxd console-save ))
+
+    {
+    event_link("shellinabox-action", "$event", "20");
+    }
 
 # links for rc.d from init.d
 	service_link_enhanced("shellinaboxd", "S99", "7");
-	#service_link_enhanced("shellinaboxd", "K45", "6");
-	#service_link_enhanced("shellinaboxd", "K45", "0");
-	#service_link_enhanced("shellinaboxd", "K45", "1");
