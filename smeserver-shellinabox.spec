@@ -12,7 +12,7 @@ Source: smeserver-shellinabox-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}-buildroot
 BuildRequires: e-smith-devtools
-Requires: e-smith-release >= 9.0
+Requires: e-smith-release >= 8.0
 Requires: shellinabox >= 2.14
 AutoReqProv: no
 

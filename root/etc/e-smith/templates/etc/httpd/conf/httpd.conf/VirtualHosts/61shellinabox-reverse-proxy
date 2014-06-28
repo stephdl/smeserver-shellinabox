@@ -54,7 +54,6 @@
 			}
 
 			$OUT .= "    AuthName \"$shellinaboxd{'Name'}\"\n";   
-                        $OUT .= "    AuthBasicProvider external\n";
 			$OUT .= "    AuthType Basic\n";
 			$OUT .= "    AuthExternal pwauth\n";
 
