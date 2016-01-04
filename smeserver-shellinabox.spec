@@ -1,5 +1,5 @@
 %define name smeserver-shellinabox
-%define version 0.0.6
+%define version 0.0.7
 %define release 2
 Summary: shellinabox is an ajax webbase terminal
 Name: %{name}
@@ -20,6 +20,9 @@ AutoReqProv: no
  shellinabox is an ajax web based terminal 
 
 %changelog
+* Sun Jan 10 2016 stephane de labrusse <stephdl@de-labrusse.fr> 0.0.7-1.sme
+- Restrict the deamon to localhost and disable ssl
+
 * Thu Jun 25 2013  stephane de labrusse <stephdl@de-labrusse.fr> 0.0.6-1.sme
 - initial release
 
