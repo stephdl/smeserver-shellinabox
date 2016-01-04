@@ -10,7 +10,7 @@ return "PORT=${'shellinaboxd'}{'TcpPort'}";
 }
 #OPTS="--disable-ssl-menu -s /:LOGIN"
 #for root login
-OPTS="--no-beep --service=/:SSH"
+OPTS="--no-beep --localhost-only --disable-ssl --service=/:SSH"
 
 # Additional examples with custom options:
 
